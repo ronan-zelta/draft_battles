@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yidn5tdn87!ley711)i%siq!fmt!6&zma$*($mu&x9=#qpomdh'
+SECRET_KEY = 'django-insecure-nql24jx^px^skf6=61e_ekq9$)+0&hemv*dyj&q=^gp@x%@*tt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'nflplayers.apps.NflplayersConfig',
+    'api.apps.ApiConfig',
     'rest_framework',
     'django_filters',
     'django.contrib.admin',
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Dublin'
 
 USE_I18N = True
 

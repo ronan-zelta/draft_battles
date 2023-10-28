@@ -1,4 +1,4 @@
-from nflplayers.models import NFLPlayer
+from api.models import NFLPlayer
 import pandas as pd
 from django.core.exceptions import ValidationError
 import numpy as np
