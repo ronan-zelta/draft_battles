@@ -30,3 +30,23 @@ class PlayerYearPoints(views.APIView):
             return Response({"error": f"No data available for year {year}"}, status=status.HTTP_404_NOT_FOUND)
 
         return Response({"player_uid": uid, "year": year, "fantasy_points": fantasy_points})
+    
+class PlayerSearch(views.APIView):
+    """
+    Search for players based on a substring of their name.
+    """
+
+    def get(self, request):
+        # Retrieve the search query from the query parameters
+        search_term = self.request.query_params.get('q', None)
+        
+        if not search_term:
+            return Response({"error": "A search query must be provided."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Filter the players whose name contains the query (case-insensitive)
+        players = NFLPlayer.objects.filter(name__icontains=search_term)
+        
+        # Serialize the filtered players
+        serializer = NFLPlayerSerializer(players, many=True)
+
+        return Response(serializer.data)
