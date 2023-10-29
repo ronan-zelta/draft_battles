@@ -34,7 +34,7 @@ class PlayerYearPoints(views.APIView):
     
 class PlayerSearch(views.APIView):
     """
-    Search for players based on a substring of their name.
+    Search for players based on a prefix-substring of their name.
     """
 
     def get(self, request):
@@ -56,7 +56,7 @@ class PlayerSearch(views.APIView):
 
 class PlayerPositionSearch(views.APIView):
     """
-    Search for players based on a substring of their name.
+    Search for players in a given position based on a prefix-substring of their name.
     """
 
     def get(self, request, pos):

@@ -29,4 +29,29 @@ $(document).ready(function() {
         }
     });
 
+    
+    // Event listener when a player is selected
+    $('[id^="team1_player_"], [id^="team2_player_"]').on('select2:select', function (e) {
+        var selectedPlayerId = e.params.data.id;
+        var correspondingYearDropdown = $(this).closest('.dropdowns').find('select[name$="_year_' + $(this).attr('id').split('_').pop() + '"]');
+
+        // Get the years for the selected player
+        $.get("/api/players/" + selectedPlayerId + "/", function(data) {
+            var years = [""];
+
+            for (let i = 1970; i <= 2022; i++) {
+                var field_name = "fp_" + i.toString();
+                if (data[field_name] != null) {
+                    years.push(i);
+                }
+            }
+
+            // Clear existing options and add the new ones
+            correspondingYearDropdown.empty();
+
+            $.each(years, function(index, year) {
+                correspondingYearDropdown.append(new Option(year, year));
+            });
+        });
+    });
 });
