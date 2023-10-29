@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Battles Game</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .team-section {
+            width: 48%;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+        .player-year-pair {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .dropdowns {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+        }
+        select {
+            width: 40%;
+        }
+        .scoreboard {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .player-score {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Team 1 Section -->
+        <div class="team-section">
+            <div class="scoreboard">0.0</div>
+            <h2>Team 1</h2>
+
+            {% for _ in "1234567"|make_list %}
+            <div class="player-year-pair">
+                <div class="dropdowns">
+                    <label>Player</label>
+                    <select name="team1_player_{{ forloop.counter }}"></select>
+
+                    <label>Year</label>
+                    <select name="team1_year_{{ forloop.counter }}"></select>
+                </div>
+
+                <div class="player-score">0.0</div>
+
+                <button type="submit">Submit</button>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Team 2 Section -->
+        <div class="team-section">
+            <div class="scoreboard">0.0</div>
+            <h2>Team 2</h2>
+
+            {% for _ in "1234567"|make_list %}
+            <div class="player-year-pair">
+                <div class="dropdowns">
+                    <label>Player</label>
+                    <select name="team2_player_{{ forloop.counter }}"></select>
+
+                    <label>Year</label>
+                    <select name="team2_year_{{ forloop.counter }}"></select>
+                </div>
+
+                <div class="player-score">0.0</div>
+
+                <button type="submit">Submit</button>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+</html>
