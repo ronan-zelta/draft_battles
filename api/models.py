@@ -5,6 +5,7 @@ class NFLPlayer(models.Model):
     name = models.CharField(max_length=255)
     pos = models.CharField(max_length=3, verbose_name='Position')
     years_played = models.CharField(max_length=11, blank=True, null=True)
+    name_searchable = models.CharField(max_length=255, default="")
     
     # Fantasy points fields
     fp_2022 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)

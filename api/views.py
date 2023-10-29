@@ -43,8 +43,9 @@ class PlayerSearch(views.APIView):
         if not search_term:
             return Response({"error": "A search query must be provided."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Filter the players whose name contains the query (case-insensitive)
-        players = NFLPlayer.objects.filter(name__icontains=search_term)
+        # Filter the players whose name contains a word which starts with query
+        pattern = r'\b' + search_term
+        players = NFLPlayer.objects.filter(name_searchable__iregex=pattern)
         
         # Serialize the filtered players
         serializer = NFLPlayerSerializer(players, many=True)

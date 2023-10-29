@@ -13,6 +13,7 @@ def populate_db(csv_path):
         player.uid = data['uid']
         player.name = data['name']
         player.pos = data['pos']
+        player.name_searchable = data['name'].replace("'","").replace("-", " ").replace(".", "")
         if not type(player.pos) == str:         # For positionless players (kick return specialists, etc.)
             player.pos = "WR"
         for year in range(1970, 2023):
