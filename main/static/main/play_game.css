@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 .team-section {
-    width: 40%;
+    width: 90%;
     border: 1px solid #ccc;
     padding: 15px;
 }
@@ -11,12 +11,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .dropdowns {
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 80%;
+}
+.player-dropdowns {
+    width: 85%;
+}
+.year-dropdowns {
+    width: 15%;
+}
+.player-year-label{
+    padding: 0 2%;
 }
 select {
     width: 40%;

@@ -6,6 +6,12 @@
     <title>Draft Battles Game</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/play_game.css' %}">
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />       <!-- Select2 CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>                                             <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>                  <!-- Select2 JS -->
+    <script src="{% static 'main/js/play_game.js' %}" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -18,11 +24,11 @@
             {% for _ in "1234567"|make_list %}
             <div class="player-year-pair">
                 <div class="dropdowns">
-                    <label>Player</label>
-                    <select name="team1_player_{{ forloop.counter }}"></select>
+                    <label class="player-year-label">Player</label>
+                    <select class="player-dropdowns" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}"></select>
 
-                    <label>Year</label>
-                    <select name="team1_year_{{ forloop.counter }}"></select>
+                    <label class="player-year-label">Year</label>
+                    <select class="year-dropdowns" name="team1_year_{{ forloop.counter }}"></select>
                 </div>
 
                 <div class="player-score">0.0</div>
@@ -49,11 +55,11 @@
             {% for _ in "1234567"|make_list %}
             <div class="player-year-pair">
                 <div class="dropdowns">
-                    <label>Player</label>
-                    <select name="team2_player_{{ forloop.counter }}"></select>
+                    <label class="player-year-label">Player</label>
+                    <select class="player-dropdowns" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}"></select>
 
-                    <label>Year</label>
-                    <select name="team2_year_{{ forloop.counter }}"></select>
+                    <label class="player-year-label">Year</label>
+                    <select class="year-dropdowns" name="team2_year_{{ forloop.counter }}"></select>
                 </div>
 
                 <div class="player-score">0.0</div>
