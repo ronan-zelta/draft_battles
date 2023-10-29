@@ -3,6 +3,7 @@ from rest_framework import generics, status, views
 from .models import NFLPlayer
 from .serializers import NFLPlayerSerializer
 from rest_framework.response import Response
+from django.db.models import Q
 
 class PlayerList(generics.ListCreateAPIView):
     queryset = NFLPlayer.objects.all()
@@ -46,6 +47,52 @@ class PlayerSearch(views.APIView):
         # Filter the players whose name contains a word which starts with query
         pattern = r'\b' + search_term
         players = NFLPlayer.objects.filter(name_searchable__iregex=pattern)
+        
+        # Serialize the filtered players
+        serializer = NFLPlayerSerializer(players, many=True)
+
+        return Response(serializer.data)
+    
+
+class PlayerPositionSearch(views.APIView):
+    """
+    Search for players based on a substring of their name.
+    """
+
+    def get(self, request, pos):
+
+        positions = []
+
+        match pos:
+            case "qb":
+                positions.append("QB")
+            case "rb":
+                positions.append("RB")
+            case "wr":
+                positions.append("WR")
+            case "te":
+                positions.append("te")
+            case "flex":
+                positions.append("RB")
+                positions.append("WR")
+                positions.append("TE")
+            case "sflex":
+                positions.append("QB")
+                positions.append("RB")
+                positions.append("WR")
+                positions.append("TE")
+            case _:
+                return Response({"error": "Invalid position. Options are 'qb', 'rb', 'wr', 'te', 'flex', 'sflex'"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Retrieve the search query from the query parameters
+        search_term = self.request.query_params.get('q', None)
+        
+        if not search_term:
+            return Response({"error": "A search query must be provided."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Filter the players whose name contains a word which starts with query
+        pattern = r'\b' + search_term
+        players = NFLPlayer.objects.filter(name_searchable__iregex=pattern, pos__in=positions)
         
         # Serialize the filtered players
         serializer = NFLPlayerSerializer(players, many=True)
