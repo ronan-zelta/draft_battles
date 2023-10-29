@@ -13,6 +13,8 @@ def populate_db(csv_path):
         player.uid = data['uid']
         player.name = data['name']
         player.pos = data['pos']
+        if not type(player.pos) == str:         # For positionless players (kick return specialists, etc.)
+            player.pos = "WR"
         for year in range(1970, 2023):
             if not isnan(data[str(year)]):
                 setattr(player, f"fp_{year}", float(data[str(year)]))
