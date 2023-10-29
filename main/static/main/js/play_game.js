@@ -1,4 +1,14 @@
 $(document).ready(function() {
+    function updateTeamScore(teamId) {
+        let totalScore = 0.0;
+        $(`.player-score[id^="team${teamId}_points_"]`).each(function() {
+            totalScore += parseFloat($(this).text());
+        });
+
+        // Update the team's scoreboard
+        $(`#team${teamId}_points_total`).text(totalScore.toFixed(1));
+    }
+
     // Initialize Select2 for each player dropdown
     $('[id^="team1_player_"], [id^="team2_player_"]').select2({
         minimumInputLength: 1,
@@ -46,6 +56,9 @@ $(document).ready(function() {
 
             // Update the corresponding player-score div
             $("#team" + teamId + "_points_" + dataId).text(points);
+
+            // Call the updateTeamScore function
+            updateTeamScore(teamId);
         }).fail(function() {
             // Handle any errors, like player not found
             $("#team" + teamId + "_points_" + dataId).text("0.0");
