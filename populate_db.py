@@ -6,7 +6,6 @@ from math import isnan
 
 def populate_db(csv_path):
     df = pd.read_csv(csv_path)
-    #df = df.where(pd.notnull(df), None)
     NFLPlayer.objects.all().delete()
     for row, data in df.iterrows():
         player = NFLPlayer()
