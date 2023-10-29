@@ -51,10 +51,10 @@ select {
     border-right: none;
 }
 .position-header {
-    height: 112px;
+    height: 100px;
 }
 .position-footer {
-    height: 18px;
+    height: 15px;
 }
 .position {
     font-size: 1.2em; /* Reduced the font-size to fit the design */

@@ -30,7 +30,7 @@ class PlayerYearPoints(views.APIView):
         if fantasy_points is None:
             return Response({"error": f"No data available for year {year}"}, status=status.HTTP_404_NOT_FOUND)
 
-        return Response({"player_uid": uid, "year": year, "fantasy_points": fantasy_points})
+        return Response({"player_uid": uid, "year": year, "points": fantasy_points})
     
 class PlayerSearch(views.APIView):
     """

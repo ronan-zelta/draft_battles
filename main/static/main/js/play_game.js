@@ -29,6 +29,29 @@ $(document).ready(function() {
         }
     });
 
+    $(".submit-button").on("click", function() {
+        // Get the corresponding dropdown values
+        let dataId = $(this).attr("data-id");
+        let teamId = $(this).attr("team-id");
+        let playerId = $("#team" + teamId + "_player_" + dataId).val();
+        let year = $("#team" + teamId + "_year_" + dataId).val();
+
+        // Construct the API endpoint
+        let apiUrl = `/api/players/${playerId}/${year}/`;
+
+        // Make the AJAX request
+        $.get(apiUrl, function(data) {
+            // Assuming the response has a field named "points"
+            let points = data.points;
+
+            // Update the corresponding player-score div
+            $("#team" + teamId + "_points_" + dataId).text(points);
+        }).fail(function() {
+            // Handle any errors, like player not found
+            $("#team" + teamId + "_points_" + dataId).text("0.0");
+        });
+    });
+
     
     // Event listener when a player is selected
     $('[id^="team1_player_"], [id^="team2_player_"]').on('select2:select', function (e) {

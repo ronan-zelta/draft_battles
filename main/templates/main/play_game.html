@@ -18,7 +18,7 @@
 
         <!-- Team 1 Section -->
         <div class="team-section">
-            <div class="scoreboard">0.0</div>
+            <div class="scoreboard" id="team1_points_total">0.0</div>
             <h2>Team 1</h2>
 
             {% for _ in "1234567"|make_list %}
@@ -28,12 +28,12 @@
                     <select class="player-dropdowns" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}"></select>
 
                     <label class="player-year-label">Year</label>
-                    <select class="year-dropdowns" name="team1_year_{{ forloop.counter }}"></select>
+                    <select class="year-dropdowns" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select>
                 </div>
 
-                <div class="player-score">0.0</div>
+                <div class="player-score" id="team1_points_{{ forloop.counter }}">0.0</div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit-button" team-id="1" data-id="{{ forloop.counter }}">Submit</button>
             </div>
             {% endfor %}
         </div>
@@ -49,7 +49,7 @@
 
         <!-- Team 2 Section -->
         <div class="team-section">
-            <div class="scoreboard">0.0</div>
+            <div class="scoreboard" id="team1_points_total">0.0</div>
             <h2>Team 2</h2>
 
             {% for _ in "1234567"|make_list %}
@@ -59,12 +59,12 @@
                     <select class="player-dropdowns" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}"></select>
 
                     <label class="player-year-label">Year</label>
-                    <select class="year-dropdowns" name="team2_year_{{ forloop.counter }}"></select>
+                    <select class="year-dropdowns" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select>
                 </div>
 
-                <div class="player-score">0.0</div>
+                <div class="player-score" id="team2_points_{{ forloop.counter }}">0.0</div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit-button" team-id="2" data-id="{{ forloop.counter }}">Submit</button>
             </div>
             {% endfor %}
         </div>
