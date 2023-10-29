@@ -4,39 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draft Battles Game</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .team-section {
-            width: 48%;
-            border: 1px solid #ccc;
-            padding: 15px;
-        }
-        .player-year-pair {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .dropdowns {
-            display: flex;
-            justify-content: space-between;
-            width: 65%;
-        }
-        select {
-            width: 40%;
-        }
-        .scoreboard {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .player-score {
-            margin-right: 10px;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/play_game.css' %}">
 </head>
 <body>
     <div class="container">
@@ -61,6 +30,15 @@
                 <button type="submit">Submit</button>
             </div>
             {% endfor %}
+        </div>
+
+        <!-- Positions Section -->
+        <div class="positions">
+            <div class="position-header"></div>
+            {% for position in positions_list %}
+                <div class="position">{{ position }}</div>
+            {% endfor %}
+            <div class="position-footer"></div>
         </div>
 
         <!-- Team 2 Section -->

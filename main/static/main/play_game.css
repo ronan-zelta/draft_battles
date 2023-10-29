@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.team-section {
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+.player-year-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+select {
+    width: 40%;
+}
+.scoreboard {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.player-score {
+    margin-right: 10px;
+}
+
+.positions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%; /* Reduced width to just fit the text + slight margin */
+    padding: 0 10px; /* Added horizontal padding */
+    border-left: none;
+    border-right: none;
+}
+.position-header {
+    height: 112px;
+}
+.position-footer {
+    height: 18px;
+}
+.position {
+    font-size: 1.2em; /* Reduced the font-size to fit the design */
+    font-weight: bold;
+    margin: 2% 0; /* Adjusted margin to make them closer */
+}
