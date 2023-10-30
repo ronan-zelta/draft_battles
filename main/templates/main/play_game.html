@@ -21,8 +21,10 @@
     <div class="container">
 
         <!-- Team 1 Section -->
-        <div class="team-section">
-            <div class="scoreboard" id="team1_points_total">0.0</div>
+        <div class="team-section red-team">
+            <div class="scoreboard-container">
+                <div class="scoreboard ui-scoreboard" id="team1_points_total">0.0</div>
+            </div>
             <h2>Team 1</h2>
 
             {% for pos in positions_list %}
@@ -53,8 +55,10 @@
         </div>
 
         <!-- Team 2 Section -->
-        <div class="team-section">
-            <div class="scoreboard" id="team2_points_total">0.0</div>
+        <div class="team-section blue-team">
+            <div class="scoreboard-container">
+                <div class="scoreboard ui-scoreboard" id="team2_points_total">0.0</div>
+            </div>
             <h2>Team 2</h2>
 
             {% for pos in positions_list %}

@@ -3,9 +3,14 @@
     justify-content: space-between;
 }
 .team-section {
-    width: 90%;
-    border: 1px solid #ccc;
+    width: 100%;
     padding: 15px;
+}
+.red-team {
+    border: 3px solid red;
+}
+.blue-team {
+    border: 3px solid rgb(0, 0, 187);
 }
 .player-year-pair {
     display: flex;
@@ -34,10 +39,18 @@
 select {
     width: 40%;
 }
-.scoreboard {
-    text-align: center;
-    font-size: 2em;
+.scoreboard-container {
+    background-color: black;
+    border: 3px solid silver;
+    width: 9em; 
+    margin: 0 auto; /* This will center the scoreboard in the team section */
+    padding: 10px;
     margin-bottom: 20px;
+}
+.scoreboard {
+    text-align: right; /* Right justified text */
+    font-size: 2em;
+    color: white; /* Making the text color white or any other color that you prefer */
     font-family: '60s Scoreboard', sans-serif;
 }
 .player-score {
@@ -55,7 +68,7 @@ select {
     border-right: none;
 }
 .position-header {
-    height: 112px;
+    height: 140px;
 }
 .position-footer {
     height: 15px;
