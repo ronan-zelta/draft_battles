@@ -49,21 +49,21 @@ select {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 10%; /* Reduced width to just fit the text + slight margin */
-    padding: 0 10px; /* Added horizontal padding */
+    width: 10%;
+    padding: 0 10px;
     border-left: none;
     border-right: none;
 }
 .position-header {
-    height: 100px;
+    height: 112px;
 }
 .position-footer {
     height: 15px;
 }
 .position {
-    font-size: 1.2em; /* Reduced the font-size to fit the design */
+    font-size: 1.2em;
     font-weight: bold;
-    margin: 2% 0; /* Adjusted margin to make them closer */
+    margin: 2% 0;
 }
 
 button {

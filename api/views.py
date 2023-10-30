@@ -63,7 +63,7 @@ class PlayerPositionSearch(views.APIView):
 
         positions = []
 
-        match pos:
+        match pos.lower():
             case "qb":
                 positions.append("QB")
             case "rb":
