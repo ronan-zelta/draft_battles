@@ -71,18 +71,18 @@ class PlayerPositionSearch(views.APIView):
             case "wr":
                 positions.append("WR")
             case "te":
-                positions.append("te")
+                positions.append("TE")
             case "flex":
                 positions.append("RB")
                 positions.append("WR")
                 positions.append("TE")
-            case "sflex":
+            case "sflx":
                 positions.append("QB")
                 positions.append("RB")
                 positions.append("WR")
                 positions.append("TE")
             case _:
-                return Response({"error": "Invalid position. Options are 'qb', 'rb', 'wr', 'te', 'flex', 'sflex'"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Invalid position. Options are 'qb', 'rb', 'wr', 'te', 'flex', 'sflx'"}, status=status.HTTP_400_BAD_REQUEST)
         
         # Retrieve the search query from the query parameters
         search_term = self.request.query_params.get('q', None)
