@@ -39,34 +39,8 @@ $(document).ready(function() {
         }
     });
 
-    $(".submit-button").on("click", function() {
-        // Get the corresponding dropdown values
-        let dataId = $(this).attr("data-id");
-        let teamId = $(this).attr("team-id");
-        let playerId = $("#team" + teamId + "_player_" + dataId).val();
-        let year = $("#team" + teamId + "_year_" + dataId).val();
-
-        // Construct the API endpoint
-        let apiUrl = `/api/players/${playerId}/${year}/`;
-
-        // Make the AJAX request
-        $.get(apiUrl, function(data) {
-            // Assuming the response has a field named "points"
-            let points = data.points;
-
-            // Update the corresponding player-score div
-            $("#team" + teamId + "_points_" + dataId).text(points);
-
-            // Call the updateTeamScore function
-            updateTeamScore(teamId);
-        }).fail(function() {
-            // Handle any errors, like player not found
-            $("#team" + teamId + "_points_" + dataId).text("0.0");
-        });
-    });
-
     
-    // Event listener when a player is selected
+    // On player being selected from dropdown
     $('[id^="team1_player_"], [id^="team2_player_"]').on('select2:select', function (e) {
         var selectedPlayerId = e.params.data.id;
         var correspondingYearDropdown = $(this).closest('.dropdowns').find('select[name$="_year_' + $(this).attr('id').split('_').pop() + '"]');
@@ -89,5 +63,65 @@ $(document).ready(function() {
                 correspondingYearDropdown.append(new Option(year, year));
             });
         });
+    });
+
+
+    $(".submit-button").on("click", function() {
+        // Get the corresponding dropdown values
+        let dataId = $(this).attr("data-id");
+        let teamId = $(this).attr("team-id");
+        let playerId = $("#team" + teamId + "_player_" + dataId).val();
+        let year = $("#team" + teamId + "_year_" + dataId).val();
+
+        // Check if either Player or Year dropdown is not selected
+        if(!playerId || !year) {
+            return;
+        }
+
+        // Construct the API endpoint
+        let apiUrl = `/api/players/${playerId}/${year}/`;
+
+        // Make the AJAX request
+        $.get(apiUrl, function(data) {
+            // Assuming the response has a field named "points"
+            let points = data.points;
+
+            // Update the corresponding player-score div
+            $("#team" + teamId + "_points_" + dataId).text(points);
+
+            // Call the updateTeamScore function
+            updateTeamScore(teamId);
+
+        }).fail(function() {
+            // Handle any errors, like player not found
+            $("#team" + teamId + "_points_" + dataId).text("0.0");
+        });
+
+        // Hide the Submit button and show the Remove button
+        $(this).hide();
+        $(this).siblings(".remove-button").show();
+    });
+
+    
+    $(".remove-button").on("click", function() {
+        let teamId = $(this).attr("team-id");
+        let dataId = $(this).attr("data-id")
+        let playerId = "team" + teamId + "_player_" + dataId;
+        let yearId = "team" + teamId + "_year_" + dataId;
+        let pointsId = "team" + teamId + "_points_" + dataId;
+
+        // Reset the dropdowns
+        $("#" + playerId).val(null).trigger('change');
+        $("#" + yearId).val(null).trigger('change');
+
+        // Reset the player point value
+        $("#" + pointsId).text("0.0");
+
+        // Update the team scoreboard
+        updateTeamScore(teamId);
+
+        // Hide the Remove button and show the Submit button
+        $(this).hide();
+        $(this).siblings(".submit-button").show();
     });
 });

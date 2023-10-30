@@ -25,8 +25,11 @@
 .year-dropdowns {
     width: 15%;
 }
-.player-year-label{
-    padding: 0 2%;
+.player-label{
+    padding: 0 1% 0 0;
+}
+.year-label{
+    padding: 0 1% 0 1%;
 }
 select {
     width: 40%;
@@ -35,6 +38,7 @@ select {
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
+    font-family: '60s Scoreboard', sans-serif;
 }
 .player-score {
     margin-right: 10px;
@@ -60,4 +64,12 @@ select {
     font-size: 1.2em; /* Reduced the font-size to fit the design */
     font-weight: bold;
     margin: 2% 0; /* Adjusted margin to make them closer */
+}
+
+button {
+    width: 9%;
+}
+
+.remove-button {
+    color: red;
 }
