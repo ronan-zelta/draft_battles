@@ -11,32 +11,58 @@ body {
     padding: 15px;
     background-color: gold;
     margin: 20px;
-    border-radius: 15px;  
+    border-radius: 15px;
+    display: flex;            /* Added this */
+    flex-direction: column;   /* Added this */
+    justify-content: space-between;  /* Added this to spread out the player rows */
 }
+
+.player-section {
+    flex-grow: 1;             /* Allow this section to grow and take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Distribute space between player rows */
+}
+
 .player-row {
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    height: 7%;
+}
+.select2-selection__rendered {
+    line-height: 35px !important;
+}
+.select2-container .select2-selection--single {
+    height: 39px !important;
+}
+.select2-selection__arrow {
+    height: 38px !important;
 }
 .dropdowns {
-    display: flex;
-    justify-content: space-between;
     width: 75%;
 }
 .player-dropdowns {
-    width: 82%;
+    width: 85%;
 }
 .year-dropdowns {
-    width: 15%;
+    width: 13%;
+    height: 39px;
 }
-.player-label{
-    padding: 0 1% 0 0;
+.player-score {
+    width: 10%;
+    font-size: 1.5em;
+    text-align: center;
 }
-.year-label{
-    padding: 0 1% 0 1%;
+
+button {
+    width: 10%;
+    padding: 5px 0px;
+    font-size: 0.9em;
+}
+
+.remove-button {
+    color: red;
 }
 .scoreboard-container {
     background-color: black;
@@ -52,16 +78,13 @@ body {
     color: white; /* Making the text color white or any other color that you prefer */
     font-family: '60s Scoreboard', sans-serif;
 }
-.player-score {
-    font-size: 1.5em;
-}
 
 .positions {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 5%;
+    width: 1%;
     padding: 0 5px;
     border-left: none;
     border-right: none;
@@ -69,28 +92,47 @@ body {
 }
 .header-section {
     display: flex;
-    justify-content: space-between;
-    margin-right: 10%;
+    text-align: center;
+    justify-content: left;
+    margin-top: 10px;    /* Reduce or remove this if it contributes to height */
+    margin-bottom: 0px;    /* Reduce or remove this if it contributes to height */
+    padding: 0px 0;         /* Adjust padding as needed */
+    font-size: 0.9em;       /* Adjust font size as needed */
+    line-height: 0;       /* Adjust line height as needed */
+}
+.player-header {
+    width: 63.5%;  /* matches .player-dropdowns width */
 }
 
-.position-header {
-    height: 140px;
+.season-header {
+    width: 10%;  /* matches .year-dropdowns width */
 }
-.position-footer {
-    height: 15px;
+
+.points-header {
+    width: 18%;  /* matches button width (though you might need a slight adjustment here) */
+}
+.position-header {
+    height: 9em;
+}
+
+.positions {
+    height: 85vh;
+    padding: 15px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 5%;
+    border-left: none;
+    border-right: none;
+    color: white;
 }
 .position {
+    flex-grow: 1;
     font-size: 1.5em;
     font-weight: bold;
-    margin: 2% 0;
-}
-
-button {
-    width: 10%;
-    padding: 5px 0px;
-    font-size: 0.75em;
-}
-
-.remove-button {
-    color: red;
+    display: flex;        /* Convert to flex container to vertically center the text */
+    align-items: center;  /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
 }
