@@ -25,15 +25,17 @@
             <div class="scoreboard-container">
                 <div class="scoreboard ui-scoreboard" id="team1_points_total">0.0</div>
             </div>
-            <h2>Team 1</h2>
+            <div class="header-section">
+                <h1>Player</h1>
+                <h1>Season</h1>
+                <h1>Points</h1>
+            </div>
 
             {% for pos in positions_list %}
-            <div class="player-year-pair">
+            <div class="player-row">
                 <div class="dropdowns">
-                    <label class="player-label">Player</label>
                     <select class="player-dropdowns" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}"  data-pos={{pos}}></select>
 
-                    <label class="year-label">Year</label>
                     <select class="year-dropdowns" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select>
                 </div>
 
@@ -59,15 +61,17 @@
             <div class="scoreboard-container">
                 <div class="scoreboard ui-scoreboard" id="team2_points_total">0.0</div>
             </div>
-            <h2>Team 2</h2>
+            <div class="header-section">
+                <h1>Player</h1>
+                <h1>Season</h1>
+                <h1>Points</h1>
+            </div>
 
             {% for pos in positions_list %}
-            <div class="player-year-pair">
+            <div class="player-row">
                 <div class="dropdowns">
-                    <label class="player-label">Player</label>
                     <select class="player-dropdowns" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select>
 
-                    <label class="year-label">Year</label>
                     <select class="year-dropdowns" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select>
                 </div>
 

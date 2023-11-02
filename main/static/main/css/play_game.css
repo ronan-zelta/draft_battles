@@ -1,31 +1,33 @@
+body {
+    background-color: black;
+}
 .container {
     display: flex;
     justify-content: space-between;
 }
 .team-section {
-    width: 100%;
+    width: 45%;
+    height: 85vh;
     padding: 15px;
+    background-color: gold;
+    margin: 20px;
+    border-radius: 15px;  
 }
-.red-team {
-    border: 3px solid red;
-}
-.blue-team {
-    border: 3px solid rgb(0, 0, 187);
-}
-.player-year-pair {
+.player-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    height: 7%;
 }
 .dropdowns {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 75%;
 }
 .player-dropdowns {
-    width: 85%;
+    width: 82%;
 }
 .year-dropdowns {
     width: 15%;
@@ -35,9 +37,6 @@
 }
 .year-label{
     padding: 0 1% 0 1%;
-}
-select {
-    width: 40%;
 }
 .scoreboard-container {
     background-color: black;
@@ -54,7 +53,7 @@ select {
     font-family: '60s Scoreboard', sans-serif;
 }
 .player-score {
-    margin-right: 10px;
+    font-size: 1.5em;
 }
 
 .positions {
@@ -62,11 +61,18 @@ select {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 10%;
-    padding: 0 10px;
+    width: 5%;
+    padding: 0 5px;
     border-left: none;
     border-right: none;
+    color: white;
 }
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
 .position-header {
     height: 140px;
 }
@@ -74,13 +80,15 @@ select {
     height: 15px;
 }
 .position {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     margin: 2% 0;
 }
 
 button {
-    width: 9%;
+    width: 10%;
+    padding: 5px 0px;
+    font-size: 0.75em;
 }
 
 .remove-button {
