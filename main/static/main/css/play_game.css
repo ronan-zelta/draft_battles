@@ -168,10 +168,10 @@ button {
         width: 10%;
     }
     .player-dropdowns {
-        width: 70%;
+        width: 69%;
     }
     .year-dropdowns {
-        width: 20%;
+        width: 21%;
         height: 39px;
         margin-right: 0px;
     }
@@ -192,17 +192,18 @@ button {
     .header-section {
         justify-content: space-between;
         text-align: center;
+        margin-left: 10%;
         margin-right: 16%;
     }
     .player-header {
-        width: 5%;  /* matches .player-dropdowns width */
+        width: 42%;  /* matches .player-dropdowns width */
     }
     
     .season-header {
-        width: 10%;  /* matches .year-dropdowns width */
+        width: 14%;  /* matches .year-dropdowns width */
     }
     
     .points-header {
-        width: 15%;  /* matches button width (though you might need a slight adjustment here) */
+        width: 18%;  /* matches button width (though you might need a slight adjustment here) */
     }
 }
