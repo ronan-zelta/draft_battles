@@ -33,6 +33,7 @@
 
             {% for pos in positions_list %}
             <div class="player-row">
+                <div class="mobile-position">{{ pos }}</div>
                 <div class="dropdowns">
                     <select class="player-dropdowns" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}"  data-pos={{pos}}></select>
 
@@ -69,6 +70,7 @@
 
             {% for pos in positions_list %}
             <div class="player-row">
+                <div class="mobile-position" >{{ pos }}</div>
                 <div class="dropdowns">
                     <select class="player-dropdowns" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select>
 
@@ -78,7 +80,7 @@
                 <div class="player-score" id="team2_points_{{ forloop.counter }}">0.0</div>
 
                 <button type="button" class="submit-button" team-id="2" data-id="{{ forloop.counter }}">Submit</button>
-                <button type="button" class="remove-button" style="display: none;" team-id="1" data-id="{{ forloop.counter }}">X</button>
+                <button type="button" class="remove-button" style="display: none;" team-id="2" data-id="{{ forloop.counter }}">X</button>
             </div>
             {% endfor %}
         </div>

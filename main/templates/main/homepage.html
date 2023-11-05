@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/homepage.css' %}">
 </head>
-<body>
+
+<body id="background" style="background-size: auto 180vh; background-repeat: no-repeat; background-position: center center; background-attachment: scroll; background-image: url('{% static 'main/media/nfl_field.png' %}');">
     <div class="container">
         <h1>Welcome to Draft Battles!</h1>
         <button><a href="{% url 'play_game' %}?mode=1qb">Play 1 QB</a></button>

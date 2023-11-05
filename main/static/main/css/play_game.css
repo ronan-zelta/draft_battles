@@ -30,6 +30,9 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.mobile-position {
+    display: none;
+}
 .select2-selection__rendered {
     line-height: 35px !important;
 }
@@ -135,4 +138,71 @@ button {
     display: flex;        /* Convert to flex container to vertically center the text */
     align-items: center;  /* Vertically center the text */
     justify-content: center; /* Horizontally center the text */
+}
+
+
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) { /* You can change '768px' to the breakpoint you prefer */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-section {
+        width: 100%; /* Make the team sections full width */
+        height: auto; /* Adjust the height to be auto so it scales with the content */
+        margin: 10px 0; /* Add some vertical space between the teams */
+    }
+
+    .positions {
+        display: none;
+    }
+    
+
+    .mobile-position {
+        display: inline;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-align: center;
+        width: 10%;
+    }
+    .player-dropdowns {
+        width: 70%;
+    }
+    .year-dropdowns {
+        width: 20%;
+        height: 39px;
+        margin-right: 0px;
+    }
+    .player-score {
+        width: 15%;
+        font-size: 1.5em;
+        text-align: center;
+        margin-right: 10px;
+        padding-left: 0;
+    }
+    button {
+        width: 15%;
+        height: 30px;
+        padding: 5px 0px;
+        font-size: 0.65em;
+    }
+
+    .header-section {
+        justify-content: space-between;
+        text-align: center;
+        margin-right: 16%;
+    }
+    .player-header {
+        width: 5%;  /* matches .player-dropdowns width */
+    }
+    
+    .season-header {
+        width: 10%;  /* matches .year-dropdowns width */
+    }
+    
+    .points-header {
+        width: 15%;  /* matches button width (though you might need a slight adjustment here) */
+    }
 }
