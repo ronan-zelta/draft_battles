@@ -9,22 +9,36 @@
     background-attachment: scroll; 
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
     margin-top: 2%;
-    height: 60vh;
+    margin-bottom: 1vh;
+    height: 50vh;
     align-self: center;
 }
 
 button {
     cursor: pointer;
     height: 8vh;
-    width: 20vh;
+    width: 32vh;
+    margin: 0.5vh;
     background-color: gold;
     border-radius: 2vh;
     border: 0.5vh solid black;
-    font-size: 2vh;
+    font-size: 2.5vh;
     color: black;
     font-weight: bold;
+}
+.gamemode-text {
+    height: 2vh;
+}
+
+.gamemode-img {
+    height: 6vh;
 }
 
 

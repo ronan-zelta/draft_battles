@@ -12,9 +12,8 @@
 <body class="background" style="background-size: auto cover; background-repeat: no-repeat; background-position: center 40%; background-attachment: scroll; background-image: url('{% static 'main/media/nfl_field.png' %}');">
     <div class="container">
         <img class="logo" src="{% static 'main/media/draft_battles_logo.png' %}">
-        </br>
-        <a href="{% url 'play_game' %}?mode=1qb"><button>Play 1 QB</button></a>
-        <a href="{% url 'play_game' %}?mode=sflx"><button>Play Superflex</button></a>
+        <a href="{% url 'play_game' %}?mode=1qb"><button><img class="gamemode-img" src="{% static 'main/media/1qb.png' %}">Play 1 QB</button></a>
+        <a href="{% url 'play_game' %}?mode=sflx"><button><img class="gamemode-img" src="{% static 'main/media/superflex.png' %}">Play Superflex</button></a>
     </div>
 </body>
 </html>
