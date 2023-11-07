@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="{% static 'main/css/homepage.css' %}">
 </head>
 
-<body id="background" style="background-size: auto 180vh; background-repeat: no-repeat; background-position: center center; background-attachment: scroll; background-image: url('{% static 'main/media/nfl_field.png' %}');">
+<body class="background" style="background-size: auto cover; background-repeat: no-repeat; background-position: center 40%; background-attachment: scroll; background-image: url('{% static 'main/media/nfl_field.png' %}');">
     <div class="container">
-        <h1>Welcome to Draft Battles!</h1>
-        <button><a href="{% url 'play_game' %}?mode=1qb">Play 1 QB</a></button>
-        <button><a href="{% url 'play_game' %}?mode=sflx">Play Superflex</a></button>
+        <img class="logo" src="{% static 'main/media/draft_battles_logo.png' %}">
+        </br>
+        <a href="{% url 'play_game' %}?mode=1qb"><button>Play 1 QB</button></a>
+        <a href="{% url 'play_game' %}?mode=sflx"><button>Play Superflex</button></a>
     </div>
 </body>
 </html>
