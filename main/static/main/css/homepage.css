@@ -3,10 +3,13 @@
 }
 
 .background {
+    background-size: auto cover; 
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
     background-size: auto 180vh; 
     background-repeat: no-repeat; 
     background-position: center center; 
-    background-attachment: scroll; 
+    background-attachment: scroll;
 }
 
 .container {
@@ -32,13 +35,38 @@ button {
     font-size: 2.5vh;
     color: black;
     font-weight: bold;
-}
-.gamemode-text {
-    height: 2vh;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 0;
+    justify-content: center;
 }
 
-.gamemode-img {
-    height: 6vh;
+button > div {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.gamemode-text {
+    align-self: center;
+}
+
+.qb1-img {
+    height: 6.5vh;
+    margin-left: -4vh;
+    margin-right: 3vh;
+}
+.superflex-img {
+    height: 7.3vh;
+    margin-left: -1.9vh;
+    margin-right: 0.6vh;
+}
+
+/* To prevent putple underlines under button text */
+a, a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: inherit; 
 }
 
 
@@ -48,5 +76,16 @@ button {
     .logo {
         margin-top: 10%;
         height: 40vh;
+    }
+
+    .qb1-img {
+        height: 6.5vh;
+        margin-left: -4vh;
+        margin-right: 3vh;
+    }
+    .superflex-img {
+        height: 7.3vh;
+        margin-left: -1.8vh;
+        margin-right: 0.5vh;
     }
 }

@@ -70,16 +70,18 @@ button {
 .scoreboard-container {
     background-color: black;
     border: 3px solid silver;
-    width: 9em; 
-    margin: 0 auto; /* This will center the scoreboard in the team section */
+    width: 16vh; 
+    height: 5.2vh; 
+    margin: 0 auto;
     padding: 10px;
     margin-bottom: 20px;
 }
 .scoreboard {
-    text-align: right; /* Right justified text */
-    font-size: 2em;
+    text-align: right;
+    font-size: 3.2vh;
     color: white; /* Making the text color white or any other color that you prefer */
     font-family: '60s Scoreboard', sans-serif;
+    padding-right: 10px;
 }
 
 .positions {
@@ -147,11 +149,13 @@ button {
     .container {
         flex-direction: column;
         align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     
     .team-section {
         width: 100%; /* Make the team sections full width */
-        height: auto; /* Adjust the height to be auto so it scales with the content */
+        height: 70vh; /* Adjust the height to be auto so it scales with the content */
         margin: 10px 0; /* Add some vertical space between the teams */
     }
 
@@ -179,7 +183,7 @@ button {
         width: 15%;
         font-size: 1.5em;
         text-align: center;
-        margin-right: 10px;
+        padding-right: 10px;
         padding-left: 0;
     }
     button {
@@ -200,10 +204,10 @@ button {
     }
     
     .season-header {
-        width: 14%;  /* matches .year-dropdowns width */
+        width: 18%;  /* matches .year-dropdowns width */
     }
     
     .points-header {
-        width: 18%;  /* matches button width (though you might need a slight adjustment here) */
+        width: 20%;  /* matches button width (though you might need a slight adjustment here) */
     }
 }
