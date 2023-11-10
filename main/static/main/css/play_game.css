@@ -6,15 +6,39 @@ body {
     justify-content: space-between;
 }
 .team-section {
-    width: 45%;
+    width: 46%;
     height: 85vh;
     padding: 15px;
     background-color: gold;
-    margin: 20px;
+    margin: 0.8vh;
     border-radius: 15px;
-    display: flex;            /* Added this */
-    flex-direction: column;   /* Added this */
-    justify-content: space-between;  /* Added this to spread out the player rows */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.pos-scoreboard {
+    height: 5.2vh;
+    padding: 13px;
+    margin-bottom: 20px;
+}
+.pos-header {
+    margin-top: 10px;
+    font-size: 2vh;
+    padding: 0;
+    line-height: 0;
+}
+.positions-section {
+    margin: 0.8vh;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-left: none;
+    border-right: none;
+    color: white;
 }
 
 .player-section {
@@ -84,17 +108,6 @@ button {
     padding-right: 10px;
 }
 
-.positions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 1%;
-    padding: 0 5px;
-    border-left: none;
-    border-right: none;
-    color: white;
-}
 .header-section {
     display: flex;
     text-align: center;
@@ -102,7 +115,7 @@ button {
     margin-top: 10px;    /* Reduce or remove this if it contributes to height */
     margin-bottom: 0px;    /* Reduce or remove this if it contributes to height */
     padding: 0px 0;         /* Adjust padding as needed */
-    font-size: 0.9em;       /* Adjust font size as needed */
+    font-size: 2vh;       /* Adjust font size as needed */
     line-height: 0;       /* Adjust line height as needed */
 }
 .player-header {
@@ -116,23 +129,7 @@ button {
 .points-header {
     width: 18%;  /* matches button width (though you might need a slight adjustment here) */
 }
-.position-header {
-    height: 8.1em;
-}
 
-.positions {
-    height: 85vh;
-    padding: 15px;
-    margin: 20px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 5%;
-    border-left: none;
-    border-right: none;
-    color: white;
-}
 .position {
     flex-grow: 1;
     font-size: 1.5em;
@@ -159,7 +156,7 @@ button {
         margin: 10px 0; /* Add some vertical space between the teams */
     }
 
-    .positions {
+    .positions-section {
         display: none;
     }
     
