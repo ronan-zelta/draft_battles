@@ -15,8 +15,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .logo {
@@ -26,7 +24,8 @@
     align-self: center;
 }
 
-button {
+.home-btn {
+    box-sizing: border-box;
     cursor: pointer;
     height: 8vh;
     width: 32vh;
@@ -39,41 +38,25 @@ button {
     font-weight: bold;
     display: inline-flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 0;
-}
-
-button > div {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.gamemode-text {
-    align-self: center;
 }
 
 .qb1-img {
     height: 6.5vh;
     margin-left: -4vh;
     margin-right: 3vh;
-    margin-bottom: -0.48vh;
+    margin-bottom: -0.55vh;
 }
 .superflex-img {
     height: 7.3vh;
     margin-left: -1.9vh;
     margin-right: 0.6vh;
-    margin-bottom: 0.32vh;
-}
-.how-to-button {
-
-}
-.beer-button {
-    
+    margin-bottom: 0.22vh;
 }
 
 .popup {
-    /*display: none;*/
+    display: none;
     width: 80vh;
     height: 60vh;
     position: absolute;
@@ -93,7 +76,8 @@ button > div {
     width: 10vh;
     height: 10vh;
     border-radius: 5vh;
-    color: green;
+    background: gray;
+    border: 0.5vh solid black;
 }
 
 .how-to-img {
@@ -105,7 +89,7 @@ button > div {
     margin-right: 2vh;
 }
 
-/* To prevent putple underlines under button text */
+/* To prevent purple underlines under button text */
 a, a:link, a:visited, a:hover, a:active, a:focus {
     text-decoration: none;
     color: inherit; 
@@ -121,9 +105,7 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
     }
 
     .qb1-img {
-        height: 6.5vh;
-        margin-left: -4vh;
-        margin-right: 3vh;
+        margin-bottom: -0.5vh;
     }
     .superflex-img {
         height: 7.3vh;
