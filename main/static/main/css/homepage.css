@@ -73,6 +73,7 @@ button > div {
 }
 
 .popup {
+    /*display: none;*/
     width: 80vh;
     height: 60vh;
     position: absolute;
@@ -84,6 +85,15 @@ button > div {
 }
 .how-to-popup{
     background: rgb(255, 77, 77);
+}
+.close-how-to-button {
+    position: absolute;
+    left: 73vh;
+    top: -3vh;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 5vh;
+    color: green;
 }
 
 .how-to-img {
