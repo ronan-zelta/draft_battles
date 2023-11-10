@@ -7,6 +7,8 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/homepage.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+    <script src="{% static 'main/js/homepage.js' %}" defer></script>
 </head>
 
 <body class="background" style="background-image: url('{% static 'main/media/nfl_field.png' %}'); background-position: center 40%;">
@@ -23,21 +25,27 @@
             <span class="gamemode-text">Play Superflex</span>
         </a>
 
-        <button class="home-btn" type="button">
+        <button class="home-btn how-to-btn" type="button">
             <img class="how-to-img" src="{% static 'main/media/how_to_play.png' %}">
             <span class="how-to-text">How to Play</span>
         </button>
 
-        <button class="home-btn" type="button">
+        <button class="home-btn beer-btn" type="button">
             <img class="beer-img" src="{% static 'main/media/beer.png' %}">
             <span class="beer-text">Buy Me a Beer</span>
         </button>
     </div>
 
-    <div class="how-to-popup popup">
+    <div id="how-to-popup"  class="popup">
         <h3>How to Play</h3>
         <p>The goal of this game is to draft the best team of NFL players (past or present)...</p>
-        <button class="close-how-to-button" type="button"></button>
+        <button class="close-popup close-how-to-button" type="button"></button>
+    </div>
+
+    <div id="beer-popup"  class="popup">
+        <h3>But Me a Beer</h3>
+        <p>If you liked this game, please buy me a beer.</p>
+        <button class="close-popup close-beer-button" type="button"></button>
     </div>
 </body>
 </html>

@@ -66,10 +66,13 @@
     border: 0.5vh solid black;
     border-radius: 50px;
 }
-.how-to-popup{
+#how-to-popup{
     background: rgb(255, 77, 77);
 }
-.close-how-to-button {
+#beer-popup{
+    background: rgb(88, 188, 255);
+}
+.close-popup {
     position: absolute;
     left: 73vh;
     top: -3vh;
@@ -78,11 +81,13 @@
     border-radius: 5vh;
     background: gray;
     border: 0.5vh solid black;
+    cursor: pointer;
 }
 
 .how-to-img {
     height: 4vh;
-    margin-right: 2vh;
+    margin-right: 2.5vh;
+    margin-left: -1vh;
 }
 .beer-img {
     height: 4vh;
