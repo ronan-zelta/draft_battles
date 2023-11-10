@@ -40,19 +40,26 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .qb1-img {
     height: 6.5vh;
-    margin-left: -4vh;
-    margin-right: 3vh;
-    margin-bottom: -0.55vh;
+    position: absolute;
+    bottom: 0;
+    left: 1vh;
+}
+.qb1-text {
+    margin-left: 5vh;
 }
 .superflex-img {
     height: 7.3vh;
-    margin-left: -1.9vh;
-    margin-right: 0.6vh;
-    margin-bottom: 0.22vh;
+    position: absolute;
+    bottom: 0;
+    left: 0.5vh;
+}
+.superflex-text {
+    margin-left: 7vh;
 }
 
 .popup {
@@ -86,12 +93,13 @@
 
 .how-to-img {
     height: 4vh;
-    margin-right: 2.5vh;
-    margin-left: -1vh;
+    margin-right: 3.5vh;
+    margin-left: -2vh;
 }
 .beer-img {
     height: 4vh;
     margin-right: 2vh;
+    margin-left: -0.5vh;
 }
 
 /* To prevent purple underlines under button text */
