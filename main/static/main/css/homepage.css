@@ -15,12 +15,13 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center; /* This will center the flex items horizontally */
 }
 
 .logo {
     margin-top: 2%;
     margin-bottom: 1vh;
-    height: 50vh;
+    height: 48vh;
     align-self: center;
 }
 
@@ -28,7 +29,7 @@ button {
     cursor: pointer;
     height: 8vh;
     width: 32vh;
-    margin: 0.5vh;
+    margin: 0.5vh auto;
     background-color: gold;
     border-radius: 2vh;
     border: 0.5vh solid black;
@@ -37,7 +38,7 @@ button {
     font-weight: bold;
     display: inline-flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 0;
     justify-content: center;
 }
@@ -45,7 +46,7 @@ button {
 button > div {
     display: inline-flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .gamemode-text {
@@ -56,11 +57,21 @@ button > div {
     height: 6.5vh;
     margin-left: -4vh;
     margin-right: 3vh;
+    margin-bottom: -0.48vh;
 }
 .superflex-img {
     height: 7.3vh;
     margin-left: -1.9vh;
     margin-right: 0.6vh;
+    margin-bottom: 0.32vh;
+}
+.how-to-img {
+    height: 4vh;
+    margin-right: 3vh;
+}
+.beer-img {
+    height: 4vh;
+    margin-right: 2vh;
 }
 
 /* To prevent putple underlines under button text */

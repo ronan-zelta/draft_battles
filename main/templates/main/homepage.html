@@ -13,7 +13,6 @@
     <div class="container">
         <img class="logo" src="{% static 'main/media/draft_battles_logo.png' %}">
 
-
         <a href="{% url 'play_game' %}?mode=1qb">
             <button>
                 <div>
@@ -28,10 +27,24 @@
             <button>
                 <div>
                     <img class="superflex-img" src="{% static 'main/media/superflex.png' %}">
-                    <span class="gamemode-text" style="padding-top: 0.4vh">Play Superflex</span>
+                    <span class="gamemode-text" style="padding-top: 0.5vh">Play Superflex</span>
                 </div>
             </button>
         </a>
+
+        <button>
+            <div>
+                <img class="how-to-img" src="{% static 'main/media/how_to_play.png' %}">
+                <span class="how-to-text">How to Play</span>
+            </div>
+        </button>
+
+        <button>
+            <div>
+                <img class="beer-img" src="{% static 'main/media/beer.png' %}">
+                <span class="beer-text">Buy Me a Beer</span>
+            </div>
+        </button>
 
     </div>
 </body>
