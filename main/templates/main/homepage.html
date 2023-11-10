@@ -14,7 +14,7 @@
         <img class="logo" src="{% static 'main/media/draft_battles_logo.png' %}">
 
         <a href="{% url 'play_game' %}?mode=1qb">
-            <button>
+            <button type="button">
                 <div>
                     <img class="qb1-img" src="{% static 'main/media/1qb.png' %}">
                     <span class="gamemode-text">Play 1 QB</span>
@@ -24,7 +24,7 @@
         
         
         <a href="{% url 'play_game' %}?mode=sflx">
-            <button>
+            <button type="button">
                 <div>
                     <img class="superflex-img" src="{% static 'main/media/superflex.png' %}">
                     <span class="gamemode-text" style="padding-top: 0.5vh">Play Superflex</span>
@@ -32,14 +32,18 @@
             </button>
         </a>
 
-        <button>
+        <button class="how-to-button" type="button">
             <div>
                 <img class="how-to-img" src="{% static 'main/media/how_to_play.png' %}">
                 <span class="how-to-text">How to Play</span>
             </div>
         </button>
+        <div class="how-to-popup popup">
+            <h3>How to Play</h3>
+            <p>The goal of this game is to draft the best team of NFL players (past or present)...</p>
+        </div>
 
-        <button>
+        <button class="beer-button" type="button">
             <div>
                 <img class="beer-img" src="{% static 'main/media/beer.png' %}">
                 <span class="beer-text">Buy Me a Beer</span>

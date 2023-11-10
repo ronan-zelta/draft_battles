@@ -87,7 +87,6 @@ $(document).ready(function() {
 
         // Make the AJAX request
         $.get(apiUrl, function(data) {
-            // Assuming the response has a field named "points"
             let points = data.points;
 
             // Update the corresponding player-score div
