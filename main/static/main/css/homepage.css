@@ -117,12 +117,14 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
         height: 40vh;
     }
 
-    .qb1-img {
-        margin-bottom: -0.5vh;
+    .popup {
+        width: 40vh;
     }
-    .superflex-img {
-        height: 7.3vh;
-        margin-left: -1.8vh;
-        margin-right: 0.5vh;
+
+    .close-popup {
+        left: 34vh;
+        top: -2vh;
+        width: 8vh;
+        height: 8vh;
     }
 }
