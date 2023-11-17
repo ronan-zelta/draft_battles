@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(25, 25, 25);
     margin: 0;
 }
 
@@ -20,7 +20,7 @@ body {
     background-color: gold;
     border: 1vh solid black;
     margin: 0.8vh;
-    border-radius: 15px;
+    border-radius: 3vh;
     display: flex; 
     flex-direction: column;
     justify-content: space-between; 
