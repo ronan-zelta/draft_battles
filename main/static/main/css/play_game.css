@@ -1,15 +1,24 @@
 body {
-    background-color: black;
+    background-color: rgb(150, 150, 150);
+    margin: 0;
 }
+
+.header {
+    background-color: rgb(70, 70, 70);
+    height: 8vh;
+    margin-bottom: 1vh;
+}
+
 .container {
+    height: 85vh;
     display: flex;
     justify-content: space-between;
 }
 .team-section {
     width: 46%;
-    height: 85vh;
     padding: 15px;
     background-color: gold;
+    border: 1vh solid black;
     margin: 0.8vh;
     border-radius: 15px;
     display: flex; 
