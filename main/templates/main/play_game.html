@@ -7,7 +7,6 @@
                 
     {% load static %}
     <link href="https://fonts.cdnfonts.com/css/60s-scoreboard" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/play_game.css' %}">
     
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />       <!-- Select2 CSS -->
@@ -19,6 +18,13 @@
 </head>
 <body>
     <div class="header">
+		<a class="home-btn" href="{% url 'homepage' %}">
+			<img class="home-img" src="{% static 'main/media/home.png' %}">
+		</a>
+
+		<button class="restart-btn" onClick="window.location.reload();">
+			<img class="restart-img" src="{% static 'main/media/restart.png' %}">
+		</button>
     </div>
 
     <div class="container">
