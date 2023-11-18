@@ -74,10 +74,18 @@ $(document).ready(function() {
                     </div>
                 `);
             }
-        });
+        }).on('select2:open', function (e) {
+			const selectId = e.target.id
+
+			$(".select2-search__field[aria-controls='select2-" + selectId + "-results']").each(function (
+				key,
+				value,
+			){
+				value.focus();
+			})
+		});
     })
-    
-    
+
     // On player being selected from dropdown
     $('.player-dropdown').on('select2:select', function (e) {
         var selectedPlayerId = e.params.data.id;

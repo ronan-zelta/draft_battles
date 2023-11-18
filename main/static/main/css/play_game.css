@@ -170,6 +170,9 @@ table {
 .select2-container--default .select2-search--dropdown .select2-search__field {
     font-size: 2.5vh;
 }
+.select2-results__options {
+    max-height: 40vh !important; /* Adjust the height as needed */
+}
 .player-dropdown {
     width: 100%;
 }
@@ -185,8 +188,8 @@ table {
 .submit-button, .remove-button {
     width: 100%;
 	height: 5vh;
-    padding: 5px 0px;
-    font-size: 0.9em;
+    padding: 0.5vh 0;
+    font-size: 2vh;
 }
 .remove-button {
     color: red;
