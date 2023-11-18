@@ -10,7 +10,7 @@ $(document).ready(function() {
     }
 
     // Initialize Select2 for each player dropdown
-    $('[id^="team1_player_"], [id^="team2_player_"]').each(function() {
+    $('.player-dropdown').each(function() {
         var position = $(this).data('pos');
 
         $(this).select2({
@@ -39,15 +39,49 @@ $(document).ready(function() {
                         })
                     };
                 }
+            },
+			templateResult: function(state) {
+                if (!state.id) {
+                    return state.text;
+                }
+                // Split the text into parts (assuming the format is 'name pos years_played')
+                var parts = state.text.split(" ");
+                var name = parts.slice(0, -2).join(" "); // Player's name
+                var posYears = parts.slice(-2).join("  "); // Player's position and years played
+
+                // Create a flex container for the text
+                var $state = $(`
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 2.5vh; text-align: left;">${name}</span>
+                        <span style="font-size: 2.5vh; text-align: right;">${posYears}</span>
+                    </div>
+                `);
+                return $state;
+            },
+            templateSelection: function(state) {
+                // Similar approach for the selected item
+                if (!state.id) {
+                    return state.text;
+                }
+                var parts = state.text.split(" ");
+                var name = parts.slice(0, -2).join(" ");
+                var posYears = parts.slice(-2).join("  ");
+
+                return $(`
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 2.5vh; text-align: left;">${name}</span>
+                        <span style="font-size: 2.5vh; text-align: right;">${posYears}</span>
+                    </div>
+                `);
             }
         });
     })
     
     
     // On player being selected from dropdown
-    $('[id^="team1_player_"], [id^="team2_player_"]').on('select2:select', function (e) {
+    $('.player-dropdown').on('select2:select', function (e) {
         var selectedPlayerId = e.params.data.id;
-        var correspondingYearDropdown = $(this).closest('.dropdowns').find('select[name$="_year_' + $(this).attr('id').split('_').pop() + '"]');
+        var correspondingYearDropdown = $(this).closest('.player-row').find('.season-dropdown');
 
         // Get the years for the selected player
         $.get("/api/players/" + selectedPlayerId + "/", function(data) {
@@ -66,6 +100,21 @@ $(document).ready(function() {
             $.each(years, function(index, year) {
                 correspondingYearDropdown.append(new Option(year, year));
             });
+
+			correspondingYearDropdown.select2({
+				// Define custom template for the dropdown items
+				templateResult: function(state) {
+					if (!state.id) {
+						return state.text;
+					}
+					// Create a new option element and apply the custom font size
+					var $state = $('<span style="font-size: 2.5vh;">' + state.text + '</span>');
+					return $state;
+				},
+				templateSelection: function(state) {
+					return $('<span style="font-size: 2.5vh;">' + state.text + '</span>');
+				}
+			});
         });
     });
 
@@ -74,8 +123,8 @@ $(document).ready(function() {
         // Get the corresponding dropdown values
         let dataId = $(this).attr("data-id");
         let teamId = $(this).attr("team-id");
-        let playerId = $("#team" + teamId + "_player_" + dataId).val();
-        let year = $("#team" + teamId + "_year_" + dataId).val();
+        let playerId = $(this).closest('.player-row').find('.player-dropdown').val();
+        let year = $(this).closest('.player-row').find('.season-dropdown').val();
 
         // Check if either Player or Year dropdown is not selected
         if(!playerId || !year) {
@@ -108,10 +157,10 @@ $(document).ready(function() {
     
     $(".remove-button").on("click", function() {
         let teamId = $(this).attr("team-id");
-        let dataId = $(this).attr("data-id")
-        let playerId = "team" + teamId + "_player_" + dataId;
-        let yearId = "team" + teamId + "_year_" + dataId;
-        let pointsId = "team" + teamId + "_points_" + dataId;
+        let playerRow = $(this).closest('.player-row');
+        let playerId = playerRow.find('.player-dropdown').attr('id');
+        let yearId = playerRow.find('.season-dropdown').attr('id');
+        let pointsId = "team" + teamId + "_points_" + playerRow.find('.player-dropdown').attr('id').split('_').pop();
 
         // Reset the dropdowns
         $("#" + playerId).val(null).trigger('change');

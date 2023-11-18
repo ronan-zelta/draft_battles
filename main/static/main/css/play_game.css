@@ -10,13 +10,14 @@ body {
 }
 
 .container {
-    height: 85vh;
+    height: 90vh;
     display: flex;
     justify-content: space-between;
 }
 .team-section {
+	position: relative;
     width: 46%;
-    padding: 15px;
+    padding: 2vh;
     background-color: gold;
     border: 1vh solid black;
     margin: 0.8vh;
@@ -25,23 +26,10 @@ body {
     flex-direction: column;
     justify-content: space-between; 
 }
-
-.pos-scoreboard {
-    height: 5.2vh;
-    padding: 13px;
-    margin-bottom: 20px;
-}
-.pos-header {
-    margin-top: 10px;
-    font-size: 2vh;
-    padding: 0;
-    line-height: 0;
-}
 .positions-section {
-    margin: 0.8vh;
-    padding: 15px;
-    border-radius: 15px;
+    margin-top: 0.8vh;
     display: flex;
+    padding-top: 2vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -49,95 +37,138 @@ body {
     border-right: none;
     color: white;
 }
-
-.player-section {
-    flex-grow: 1;             /* Allow this section to grow and take available space */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;  /* Distribute space between player rows */
-}
-
-.player-row {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.mobile-position {
-    display: none;
-}
-.select2-selection__rendered {
-    line-height: 35px !important;
-}
-.select2-container .select2-selection--single {
-    height: 39px !important;
-}
-.select2-selection__arrow {
-    height: 38px !important;
-}
-.dropdowns {
-    width: 75%;
-}
-.player-dropdowns {
-    width: 85%;
-}
-.year-dropdowns {
-    width: 13%;
-    height: 39px;
-}
-.player-score {
-    width: 10%;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-button {
-    width: 10%;
-    padding: 5px 0px;
-    font-size: 0.9em;
-}
-
-.remove-button {
-    color: red;
-}
 .scoreboard-container {
     background-color: black;
-    border: 3px solid silver;
-    width: 16vh; 
-    height: 5.2vh; 
+    border: 0.5vh solid silver;
+    width: 22vh; 
+    height: 7.2vh; 
     margin: 0 auto;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 1.2vh;
+    margin-bottom: 3vh;
 }
 .scoreboard {
     text-align: right;
-    font-size: 3.2vh;
+    font-size: 4.4vh;
     color: white; /* Making the text color white or any other color that you prefer */
     font-family: '60s Scoreboard', sans-serif;
     padding-right: 10px;
 }
-
-.header-section {
+.pos-scoreboard {
+    height: 8.2vh;
+    padding: 1.2vh;
+	margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+.pos-header-row {
+	height: 3.6vh;
+}
+.pos-header-text {
+	font-size: 2.8vh;
+	line-height: 0;
+	padding: 0;
+	margin: 0;
+	height: 3vh;
+}
+.position-row {
+    flex-grow: 1;
     display: flex;
-    text-align: center;
-    justify-content: left;
-    margin-top: 10px;    /* Reduce or remove this if it contributes to height */
-    margin-bottom: 0px;    /* Reduce or remove this if it contributes to height */
-    padding: 0px 0;         /* Adjust padding as needed */
-    font-size: 2vh;       /* Adjust font size as needed */
-    line-height: 0;       /* Adjust line height as needed */
+	height: 9.2vh;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.player-header {
-    width: 63.5%;  /* matches .player-dropdowns width */
+.pos-text {
+	width: 100%;
+	font-weight: bold;
+	font-size: 2.5vh;
+	text-align: center;
+}
+.position-row > td, .player-row > td {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.season-header {
-    width: 10%;  /* matches .year-dropdowns width */
+table {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header-row {
+    flex-grow: 1;
+    display: flex;
+	height: 4vh;
+	flex-direction: row;
+    align-items: center;
+}
+.player-row {
+    flex-grow: 1;
+    display: flex;
+	height: 9.2vh;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.player-cell {
+    width: 60%;
+}
+.season-cell {
+    width: 15%;
+}
+.points-cell {
+	width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-cell {
+    width: 10%;
+}
+.mobile-position {
+    display: none;
+}
+.team-headers {
+	font-size: 2.8vh;
+	font-weight: bold;
+	text-align: center;
+}
+.select2-selection__rendered {
+    line-height: 5vh !important;
+}
+.select2-container .select2-selection--single {
+    height: 5vh !important;
+}
+.select2-selection__arrow {
+    height: 5vh !important;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    font-size: 2.5vh;
+}
+.player-dropdown {
+    width: 100%;
+}
+.season-dropdown {
+    width: 100%;
+    height: 5vh;
+}
+.player-score {
+    font-size: 3.5vh;
+	width: 100%;
+    text-align: center; 
+}
+button {
+    width: 100%;
+	height: 5vh;
+    padding: 5px 0px;
+    font-size: 0.9em;
+}
+.remove-button {
+    color: red;
+	display: none;
 }
 
-.points-header {
-    width: 18%;  /* matches button width (though you might need a slight adjustment here) */
-}
 
 .position {
     flex-grow: 1;

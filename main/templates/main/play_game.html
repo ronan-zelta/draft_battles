@@ -24,41 +24,43 @@
     <div class="container">
 
         <!-- Team 1 Section -->
-        <div class="team-section red-team">
+        <div class="team-section blue-team">
             <div class="scoreboard-container">
                 <div class="scoreboard ui-scoreboard" id="team1_points_total">0.0</div>
             </div>
-            <div class="header-section">
-                <h3 class="player-header">Player</h3>
-                <h3 class="season-header">Season</h3>
-                <h3 class="points-header">Points</h3>
-            </div>
+			<table>
+				<tr class="header-row">
+					<td class="mobile-position"></td>
+					<td class="player-cell team-headers">Player</td>
+					<td class="season-cell team-headers">Season</td>
+					<td class="points-cell team-headers">Points</td>
+					<td class="button-cell"></td>
+				</tr>
 
-            {% for pos in positions_list %}
-            <div class="player-row">
-                <div class="mobile-position">{{ pos }}</div>
-                <div class="dropdowns">
-                    <select class="player-dropdowns" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}"  data-pos={{pos}}></select>
-
-                    <select class="year-dropdowns" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select>
-                </div>
-
-                <div class="player-score" id="team1_points_{{ forloop.counter }}">0.0</div>
-
-                <button type="button" class="submit-button" team-id="1" data-id="{{ forloop.counter }}">Submit</button>
-                <button type="button" class="remove-button" style="display: none;" team-id="1" data-id="{{ forloop.counter }}">X</button>
-            </div>
-            {% endfor %}
+				{% for pos in positions_list %}
+				<tr class="player-row">
+					<td class="mobile-position">{{ pos }}</td>
+					<td class="player-cell"><select class="player-dropdown" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}" data-pos={{pos}}></select></td>
+					<td class="season-cell"><select class="season-dropdown" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select></td>
+					<td class="points-cell"><span class="player-score" id="team1_points_{{ forloop.counter }}">0.0</span></td>
+					<td class="button-cell">
+						<button type="button" class="submit-button" team-id="1" data-id="{{ forloop.counter }}">Submit</button>
+						<button type="button" class="remove-button" team-id="1" data-id="{{ forloop.counter }}">X</button>
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
         </div>
 
         <!-- Positions Section -->
         <div class="positions-section">
             <div class="pos-scoreboard"></div>
-            <div class="pos-header"><h3 style="opacity:0;">.</h3></div>
-            {% for position in positions_list %}
-                <div class="position">{{ position }}</div>
-            {% endfor %}
-            <div class="position-footer"></div>
+			<table>
+				<tr class="pos-header-row"><td class="pos-header-text"></td></tr>
+				{% for position in positions_list %}
+					<tr class="position-row"><td class="pos-text">{{ position }}<td></tr>
+				{% endfor %}
+			</table>
         </div>
 
         <!-- Team 2 Section -->
@@ -66,27 +68,28 @@
             <div class="scoreboard-container">
                 <div class="scoreboard ui-scoreboard" id="team2_points_total">0.0</div>
             </div>
-            <div class="header-section">
-                <h3 class="player-header">Player</h3>
-                <h3 class="season-header">Season</h3>
-                <h3 class="points-header">Points</h3>
-            </div>
+			<table>
+				<tr class="header-row">
+					<td class="mobile-position"></td>
+					<td class="player-cell team-headers">Player</td>
+					<td class="season-cell team-headers">Season</td>
+					<td class="points-cell team-headers">Points</td>
+					<td class="button-cell"></td>
+				</tr>
 
-            {% for pos in positions_list %}
-            <div class="player-row">
-                <div class="mobile-position" >{{ pos }}</div>
-                <div class="dropdowns">
-                    <select class="player-dropdowns" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select>
-
-                    <select class="year-dropdowns" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select>
-                </div>
-
-                <div class="player-score" id="team2_points_{{ forloop.counter }}">0.0</div>
-
-                <button type="button" class="submit-button" team-id="2" data-id="{{ forloop.counter }}">Submit</button>
-                <button type="button" class="remove-button" style="display: none;" team-id="2" data-id="{{ forloop.counter }}">X</button>
-            </div>
-            {% endfor %}
+				{% for pos in positions_list %}
+				<tr class="player-row">
+					<td class="mobile-position">{{ pos }}</td>
+					<td class="player-cell"><select class="player-dropdown" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select></td>
+					<td class="season-cell"><select class="season-dropdown" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select></td>
+					<td class="points-cell"><span class="player-score" id="team2_points_{{ forloop.counter }}">0.0</span></td>
+					<td class="button-cell">
+						<button type="button" class="submit-button" team-id="2" data-id="{{ forloop.counter }}">Submit</button>
+						<button type="button" class="remove-button" team-id="2" data-id="{{ forloop.counter }}">X</button>
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
         </div>
 
     </div>
