@@ -110,7 +110,7 @@ $(document).ready(function() {
             });
 
 			correspondingYearDropdown.select2({
-				// Define custom template for the dropdown items
+				minimumResultsForSearch: Infinity,
 				templateResult: function(state) {
 					if (!state.id) {
 						return state.text;
