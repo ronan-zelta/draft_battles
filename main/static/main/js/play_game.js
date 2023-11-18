@@ -12,6 +12,7 @@ $(document).ready(function() {
     // Initialize Select2 for each player dropdown
     $('.player-dropdown').each(function() {
         var position = $(this).data('pos');
+		var fontSize = $(window).width() <= 768 ? '1.3vh' : '2.5vh';
 
         $(this).select2({
             minimumInputLength: 1,
@@ -52,8 +53,8 @@ $(document).ready(function() {
                 // Create a flex container for the text
                 var $state = $(`
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 2.5vh; text-align: left;">${name}</span>
-                        <span style="font-size: 2.5vh; text-align: right;">${posYears}</span>
+                        <span style="font-size: ${fontSize}; text-align: left;">${name}</span>
+                        <span style="font-size: ${fontSize}; text-align: right;">${posYears}</span>
                     </div>
                 `);
                 return $state;
@@ -69,8 +70,8 @@ $(document).ready(function() {
 
                 return $(`
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 2.5vh; text-align: left;">${name}</span>
-                        <span style="font-size: 2.5vh; text-align: right;">${posYears}</span>
+                        <span style="font-size: ${fontSize}; text-align: left;">${name}</span>
+                        <span style="font-size: ${fontSize}; text-align: right;">${posYears}</span>
                     </div>
                 `);
             }
@@ -84,6 +85,26 @@ $(document).ready(function() {
 				value.focus();
 			})
 		});
+
+		// Initialize Select2 for each season dropdown
+		$('.season-dropdown').each(function() {
+			// Determine font size based on screen width
+			var fontSize = $(window).width() <= 768 ? '1.3vh' : '2.5vh';
+	
+			$(this).select2({
+				minimumResultsForSearch: Infinity, // Disable the search box
+				templateResult: function(state) {
+					if (!state.id) {
+						return state.text;
+					}
+					var $state = $('<span style="font-size: ' + fontSize + ';">' + state.text + '</span>');
+					return $state;
+				},
+				templateSelection: function(state) {
+					return $('<span style="font-size: ' + fontSize + ';">' + state.text + '</span>');
+				}
+			});
+		}).prop("disabled", true).next('.select2-container').find('.select2-selection').css('background-color', '#fff');
     })
 
     // On player being selected from dropdown
@@ -108,22 +129,9 @@ $(document).ready(function() {
             $.each(years, function(index, year) {
                 correspondingYearDropdown.append(new Option(year, year));
             });
-
-			correspondingYearDropdown.select2({
-				minimumResultsForSearch: Infinity,
-				templateResult: function(state) {
-					if (!state.id) {
-						return state.text;
-					}
-					// Create a new option element and apply the custom font size
-					var $state = $('<span style="font-size: 2.5vh;">' + state.text + '</span>');
-					return $state;
-				},
-				templateSelection: function(state) {
-					return $('<span style="font-size: 2.5vh;">' + state.text + '</span>');
-				}
-			});
         });
+
+		$(this).closest('.player-row').find('.season-dropdown').prop("disabled", false);
     });
 
 
