@@ -49,7 +49,7 @@ class PlayerSearch(views.APIView):
         players = NFLPlayer.objects.filter(name_searchable__iregex=pattern)
         
         # Serialize the filtered players
-        serializer = NFLPlayerSerializer(players, many=True)
+        serializer = NFLPlayerSerializer(players, many=True, include_fp_data=False)
 
         return Response(serializer.data)
     
@@ -95,6 +95,6 @@ class PlayerPositionSearch(views.APIView):
         players = NFLPlayer.objects.filter(name_searchable__iregex=pattern, pos__in=positions)
         
         # Serialize the filtered players
-        serializer = NFLPlayerSerializer(players, many=True)
+        serializer = NFLPlayerSerializer(players, many=True, include_fp_data=False)
 
         return Response(serializer.data)
