@@ -135,6 +135,18 @@ table {
     justify-content: space-between;
     align-items: center;
 }
+.player-img {
+	height: 8vh;
+}
+.player-name {
+	text-align: center;
+	font-size: 3.5vh;
+	margin-left: 2vh;
+}
+.player-year {
+	text-align: center;
+	font-size: 3.5vh;
+}
 .player-cell {
     width: 60%;
 }

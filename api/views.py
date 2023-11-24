@@ -30,7 +30,10 @@ class PlayerYearPoints(views.APIView):
         if fantasy_points is None:
             return Response({"error": f"No data available for year {year}"}, status=status.HTTP_404_NOT_FOUND)
 
-        return Response({"player_uid": uid, "year": year, "points": fantasy_points})
+        img = getattr(player, "img", None)
+        name = getattr(player, "name", None)
+
+        return Response({"player_uid": uid, "name": name, "img": img, "year": year, "points": fantasy_points})
     
 class PlayerSearch(views.APIView):
     """
