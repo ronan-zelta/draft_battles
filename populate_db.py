@@ -14,8 +14,6 @@ def populate_db(csv_path):
         player.name = data['name']
         player.pos = data['pos']
         player.img = data['img']
-        if not type(player.img) == str:
-            player.img = None
         player.name_searchable = data['name'].replace("'","").replace("-", " ").replace(".", "")
         if not type(player.pos) == str:         # For positionless players (kick return specialists, etc.)
             player.pos = "WR"
@@ -24,4 +22,4 @@ def populate_db(csv_path):
                 setattr(player, f"fp_{year}", float(data[str(year)]))
         player.save()
 
-populate_db("data.csv")
+populate_db("output.csv")

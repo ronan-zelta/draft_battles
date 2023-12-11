@@ -40,21 +40,14 @@
 					<td class="player-cell team-headers">Player</td>
 					<td class="season-cell team-headers">Season</td>
 					<td class="points-cell team-headers">Points</td>
-					<td class="button-cell"></td> 
+					<td class="button-cell"></td>
 				</tr>
 
 				{% for pos in positions_list %}
 				<tr class="player-row">
 					<td class="mobile-position">{{ pos }}</td>
-					<td class="player-cell">
-						<select class="player-dropdown" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}" data-pos={{pos}}></select>
-						<img class="player-img" src="{% static 'main/media/img_not_found.png' %}" style="display: none; height: 4vh;" alt="Player Image">
-						<span class="player-name" style="display: none;"></span>
-					</td>
-					<td class="season-cell">
-						<select class="season-dropdown" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select>
-						<span class="player-year" style="display: none;"></span>
-					</td>
+					<td class="player-cell"><select class="player-dropdown" id="team1_player_{{ forloop.counter }}" name="team1_player_{{ forloop.counter }}" data-pos={{pos}}></select></td>
+					<td class="season-cell"><select class="season-dropdown" id="team1_year_{{ forloop.counter }}" name="team1_year_{{ forloop.counter }}"></select></td>
 					<td class="points-cell"><span class="player-score" id="team1_points_{{ forloop.counter }}">0.0</span></td>
 					<td class="button-cell">
 						<button type="button" class="submit-button" team-id="1" data-id="{{ forloop.counter }}">Submit</button>
@@ -93,15 +86,8 @@
 				{% for pos in positions_list %}
 				<tr class="player-row">
 					<td class="mobile-position">{{ pos }}</td>
-					<td class="player-cell">
-						<select class="player-dropdown" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select>
-						<img class="player-img" src="{% static 'main/media/img_not_found.png' %}" style="display: none; height: 4vh;" alt="Player Image">
-						<span class="player-name" style="display: none;"></span>
-					</td>
-					<td class="season-cell">
-						<select class="season-dropdown" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select>
-						<span class="player-year" style="display: none;"></span>
-					</td>
+					<td class="player-cell"><select class="player-dropdown" id="team2_player_{{ forloop.counter }}" name="team2_player_{{ forloop.counter }}" data-pos={{pos}}></select></td>
+					<td class="season-cell"><select class="season-dropdown" id="team2_year_{{ forloop.counter }}" name="team2_year_{{ forloop.counter }}"></select></td>
 					<td class="points-cell"><span class="player-score" id="team2_points_{{ forloop.counter }}">0.0</span></td>
 					<td class="button-cell">
 						<button type="button" class="submit-button" team-id="2" data-id="{{ forloop.counter }}">Submit</button>

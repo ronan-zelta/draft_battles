@@ -139,7 +139,6 @@ $(document).ready(function() {
         // Get the corresponding dropdown values
         let dataId = $(this).attr("data-id");
         let teamId = $(this).attr("team-id");
-        let playerRow = $(this).closest('.player-row');
         let playerId = $(this).closest('.player-row').find('.player-dropdown').val();
         let year = $(this).closest('.player-row').find('.season-dropdown').val();
 
@@ -155,21 +154,11 @@ $(document).ready(function() {
         $.get(apiUrl, function(data) {
             let points = data.points;
 
-			// Update the corresponding player-score div
-			playerRow.find(".player-score").text(points);
+            // Update the corresponding player-score div
+            $("#team" + teamId + "_points_" + dataId).text(points);
 
-			// Hide dropdowns
-			playerRow.find('.player-dropdown').select2('destroy').hide();
-        	playerRow.find('.season-dropdown').select2('destroy').hide();
-
-			// Show the new elements with data
-			if (data.img) { playerRow.find('.player-img').attr('src', data.img); }
-			playerRow.find('.player-img').show();
-			playerRow.find('.player-name').text(data.name || 'Unknown Player').show();
-			playerRow.find('.player-year').text(year).show();
-
-			// Call the updateTeamScore function
-			updateTeamScore(teamId);
+            // Call the updateTeamScore function
+            updateTeamScore(teamId);
 
         }).fail(function() {
             // Handle any errors, like player not found
