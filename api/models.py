@@ -5,7 +5,6 @@ class NFLPlayer(models.Model):
     name = models.CharField(max_length=255)
     pos = models.CharField(max_length=3, verbose_name='Position')
     years_played = models.CharField(max_length=11, blank=True, null=True)
-    img = models.CharField(max_length=100, null=True, blank=True)
     name_searchable = models.CharField(max_length=255, default="")
     
     # Fantasy points fields
