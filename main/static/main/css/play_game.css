@@ -11,7 +11,7 @@ body {
     height: 8vh;
     margin-bottom: 1vh;
 }
-.home-btn {
+#home-btn {
 	margin-left: 3vh;
 	height: 4vh;
 }
@@ -19,7 +19,7 @@ body {
 	margin-top: 2vh;
 	height: 4vh;
 }
-.restart-btn {
+#restart-btn {
 	margin-left: 4vh;
 	margin-top: 2vh;
 	height: 4vh;
@@ -33,20 +33,55 @@ body {
 	display: block;
 }
 
-.edit-score-btn {
+#edit-score-btn {
     position: relative;
     top: 0.25vh;
 	background: none;
     margin-left: 3.5vh;
-	height: 4.4vh;
+	height: 4.3vh;
 	width: auto;
     cursor: pointer;
     border: none;
     padding: 0;
 }
 .edit-score-img {
-	height: 4.4vh;
+	height: 4.3vh;
     width: auto;
+}
+#edit-score-info {
+    position: absolute;
+    top: 9vh;
+    left: 10vh;
+    background-color: rgb(40, 40, 40);
+    height: 10vh;
+    width: 10vh;
+    color: white;
+}
+.popup {
+    display: none;
+    width: 80vh;
+    height: 60vh;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.5vh solid black;
+    border-radius: 5vh;
+    text-align: center;
+}
+#edit-score-popup{
+    background: rgb(255, 77, 77);
+}
+.close-popup {
+    position: absolute;
+    left: 73vh;
+    top: -3vh;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 5vh;
+    background: gray;
+    border: 0.5vh solid black;
+    cursor: pointer;
 }
 
 .container {

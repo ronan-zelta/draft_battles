@@ -18,15 +18,15 @@
 </head>
 <body>
     <div class="header">
-		<a class="home-btn" href="{% url 'homepage' %}">
+		<a id="home-btn" href="{% url 'homepage' %}" title="Home">
 			<img class="home-img" src="{% static 'main/media/home.png' %}">
 		</a>
 
-		<button class="restart-btn" onClick="window.location.reload();">
+		<button id="restart-btn" onClick="window.location.reload();" title="Restart">
 			<img class="restart-img" src="{% static 'main/media/restart.png' %}">
 		</button>
 
-		<button class="edit-score-btn">
+		<button id="edit-score-btn" title="Edit Score">
 			<img class="edit-score-img" src="{% static 'main/media/edit_score.png' %}">
 		</button>
     </div>
@@ -102,6 +102,12 @@
 			</table>
         </div>
 
+    </div>
+
+	<div id="edit-score-popup"  class="popup">
+        <h3>Edit Score</h3>
+        <p>Edit player scores</p>
+        <button class="close-popup close-edit-score-button" type="button"></button>
     </div>
 </body>
 </html>

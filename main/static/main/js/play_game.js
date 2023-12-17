@@ -192,4 +192,12 @@ $(document).ready(function() {
         $(this).hide();
         $(this).siblings(".submit-button").show();
     });
+
+    $("#edit-score-btn").on("click", function() {
+        $("#edit-score-popup").show();
+    });
+
+    $(".close-edit-score-button").on("click", function() {
+        $("#edit-score-popup").hide();
+    });
 });
