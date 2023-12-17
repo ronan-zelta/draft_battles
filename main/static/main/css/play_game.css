@@ -33,6 +33,22 @@ body {
 	display: block;
 }
 
+.edit-score-btn {
+    position: relative;
+    top: 0.25vh;
+	background: none;
+    margin-left: 3.5vh;
+	height: 4.4vh;
+	width: auto;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+.edit-score-img {
+	height: 4.4vh;
+    width: auto;
+}
+
 .container {
     height: 90vh;
     display: flex;
