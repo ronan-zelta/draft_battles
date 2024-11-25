@@ -66,7 +66,7 @@ class NFLPlayer(models.Model):
     def save(self, *args, **kwargs):
         # Calculating years_played before saving
         years_with_points = []
-        for year in range(1970, 2023):  # Adjust according to data range
+        for year in range(1970, 2024):  # Adjust according to data range
             if getattr(self, f'fp_{year}') is not None:
                 years_with_points.append(year)
         if years_with_points:

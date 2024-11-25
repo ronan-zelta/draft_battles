@@ -13,6 +13,6 @@ class NFLPlayerSerializer(serializers.ModelSerializer):
 
         if not include_fp_data:
             # Exclude fantasy point fields
-            excluded_fields = ['fp_' + str(year) for year in range(1970, 2023)]
+            excluded_fields = ['fp_' + str(year) for year in range(1970, 2024)]
             for field in excluded_fields:
                 self.fields.pop(field, None)

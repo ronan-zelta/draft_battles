@@ -12,9 +12,6 @@ def populate_db(csv_path, db_path):
     cursor.execute("DELETE FROM api_nflplayer")
     conn.commit()
 
-    cursor.execute("ALTER TABLE api_nflplayer ADD COLUMN fp_2023 REAL")
-    conn.commit()
-
     # Read the CSV file
     df = pd.read_csv(csv_path)
 

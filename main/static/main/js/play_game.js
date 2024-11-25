@@ -116,7 +116,7 @@ $(document).ready(function() {
         $.get("/api/players/" + selectedPlayerId + "/", function(data) {
             var years = [""];
 
-            for (let i = 1970; i <= 2022; i++) {
+            for (let i = 1970; i <= 2023; i++) {
                 var field_name = "fp_" + i.toString();
                 if (data[field_name] != null) {
                     years.push(i);
