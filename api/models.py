@@ -8,6 +8,7 @@ class NFLPlayer(models.Model):
     name_searchable = models.CharField(max_length=255, default="")
     
     # Fantasy points fields
+    fp_2023 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
     fp_2022 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
     fp_2021 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
     fp_2020 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
