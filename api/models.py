@@ -1,77 +1,63 @@
-from django.db import models
+from pydantic import BaseModel, Field, computed_field
+from typing import Dict, Optional
 
-class NFLPlayer(models.Model):
-    uid = models.CharField(max_length=8, primary_key=True, unique=True)
-    name = models.CharField(max_length=255)
-    pos = models.CharField(max_length=3, verbose_name='Position')
-    years_played = models.CharField(max_length=11, blank=True, null=True)
-    name_searchable = models.CharField(max_length=255, default="")
+class Player(BaseModel):
+    id: str = Field(..., alias="_id") 
+    name: str
+    pos: str
+    name_searchable: str
+    fantasy_points: Dict[str, float]
     
-    # Fantasy points fields
-    fp_2023 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2022 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2021 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2020 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2019 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2018 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2017 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2016 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2015 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2014 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2013 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2012 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2011 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2010 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2009 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2008 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2007 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2006 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2005 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2004 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2003 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2002 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2001 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_2000 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1999 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1998 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1997 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1996 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1995 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1994 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1993 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1992 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1991 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1990 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1989 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1988 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1987 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1986 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1985 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1984 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1983 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1982 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1981 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1980 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1979 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1978 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1977 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1976 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1975 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1974 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1973 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1972 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1971 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
-    fp_1970 = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
+    class Config:
+        validate_by_name = True
+        json_schema_extra = {
+            "example": {
+                "_id": "ChasJa00",
+                "name": "Ja'Marr Chase",
+                "pos": "WR",
+                "name_searchable": "jamarr chase",
+                "fantasy_points": {
+                    "2024": 276.0,
+                    "2023": 162.72,
+                    "2022": 155.4,
+                    "2021": 223.6,
+                }
+            }
+        }
 
-    def save(self, *args, **kwargs):
-        # Calculating years_played before saving
-        years_with_points = []
-        for year in range(1970, 2024):  # Adjust according to data range
-            if getattr(self, f'fp_{year}') is not None:
-                years_with_points.append(year)
-        if years_with_points:
-            self.years_played = f"({min(years_with_points)}-{max(years_with_points)})"
-        super(NFLPlayer, self).save(*args, **kwargs)
+    @computed_field
+    @property
+    def first_year(self) -> Optional[int]:
+        if not self.fantasy_points:
+            return None
+        years = sorted(int(y) for y in self.fantasy_points.keys())
+        return years[0]
+    
+    @computed_field
+    @property
+    def last_year(self) -> Optional[int]:
+        if not self.fantasy_points:
+            return None
+        years = sorted(int(y) for y in self.fantasy_points.keys())
+        return years[-1]
 
-    def __str__(self):
-        return self.name
+    def to_mongo_dict(
+        self,
+        include: Optional[set[str]] = None,
+        exclude: Optional[set[str]] = None
+    ) -> dict:
+        """Convert to MongoDB-compatible dict, with optional field control."""
+        doc = self.model_dump(by_alias=True, include=include, exclude=exclude)
+
+        return doc
+
+
+class PlayerSearchResult(BaseModel):
+    id: str = Field(..., alias="_id")
+    name: str
+    pos: str
+    first_year: Optional[int]
+    last_year: Optional[int]
+
+    class Config:
+        validate_by_name = True

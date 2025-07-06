@@ -1,2 +1,2 @@
-# draft_battles
+# Draft Battles
 Fantasy NFL Draft Battle Game
