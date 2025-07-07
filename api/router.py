@@ -7,6 +7,10 @@ router = APIRouter()
 
 player_repository = PlayerRepository()
 
+@router.get("/health")
+async def health_check() -> dict:
+    return {"status": "OK"}
+
 @router.get("/player/{uid}")
 async def get_player(uid: str) -> Player:
     player = await player_repository.get_player(uid)
