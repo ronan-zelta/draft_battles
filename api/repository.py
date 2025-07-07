@@ -3,7 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
 from models import Player
-from utils import make_name_searchable
+from utils import get_position_query, make_name_searchable
 
 load_dotenv()
 
@@ -34,14 +34,14 @@ class PlayerRepository:
         return Player(**result) if result else None
     
 
-    async def search_players(self, search_term: str, pos: str, limit: int = 20) -> list[Player]:
+    async def search_players(self, search_term: str, pos: str = None, limit: int = 20) -> list[Player]:
         if not search_term:
             return []
         
         pattern = f"\\b{make_name_searchable(search_term)}"
         query = {"name_searchable": {"$regex": pattern, "$options": "i"}}
         if pos:
-            query["pos"] = pos.upper()
+            query.update(get_position_query(pos))
         cursor = self.collection.find(query)
 
         if limit:
