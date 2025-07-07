@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from repository import PlayerRepository
-from models import Player, PlayerSearchResult
+from models import PlayerSearchResult
 
 router = APIRouter()
 
