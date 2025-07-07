@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, computed_field
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 class Player(BaseModel):
     id: str = Field(..., alias="_id") 
@@ -27,19 +27,11 @@ class Player(BaseModel):
 
     @computed_field
     @property
-    def first_year(self) -> Optional[int]:
+    def years_played(self) -> Optional[List[int]]:
         if not self.fantasy_points:
             return None
         years = sorted(int(y) for y in self.fantasy_points.keys())
-        return years[0]
-    
-    @computed_field
-    @property
-    def last_year(self) -> Optional[int]:
-        if not self.fantasy_points:
-            return None
-        years = sorted(int(y) for y in self.fantasy_points.keys())
-        return years[-1]
+        return years
 
     def to_mongo_dict(
         self,
@@ -56,8 +48,7 @@ class PlayerSearchResult(BaseModel):
     id: str = Field(..., alias="_id")
     name: str
     pos: str
-    first_year: Optional[int]
-    last_year: Optional[int]
+    years_played: List[int]
 
     class Config:
         validate_by_name = True
